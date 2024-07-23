@@ -1,3 +1,5 @@
+// MES VARIABLES
+
 let monTaskManager = document.getElementById("monTaskManager");
 let dashboard = document.getElementById("dashboard");
 let messagerie = document.getElementById("messagerie");
@@ -7,8 +9,10 @@ let campagnes = document.getElementById("campagnes");
 let blog = document.getElementById("blog");
 let menus = document.getElementById("menus");
 
-
 let display = document.getElementById("display");
+
+
+// MES EVENEMENTS
 
 monTaskManager.addEventListener("click", () => {
     display.innerHTML = `<h1>Bienvenue sur l'espace Manager</h1>
@@ -19,7 +23,6 @@ monTaskManager.addEventListener("click", () => {
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, magnam.</p>
 `;
 })
-
 dashboard.addEventListener("click", () => {
     display.innerHTML = `<h2 class="text-primary">Bienvenue sur le dashboard</h2>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, error!</p>
@@ -44,7 +47,27 @@ medias.addEventListener("click", () => {
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum debitis dolorum veritatis hic, amet quae totam cum molestias aliquam magni laudantium dolore. Vitae, mollitia officia.</p>
 <p>Lorem ipsum dolor sit amet.</p>`;
 })
+campagnes.addEventListener("click", () => {
+    display.innerHTML = `<h2 class="text-info">Bienvenue dans ton gestionnaire de campagnes</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, error!</p>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum debitis dolorum veritatis hic, amet quae totam cum molestias aliquam magni laudantium dolore. Vitae, mollitia officia.</p>
+<p>Lorem ipsum dolor sit amet.</p>`;
+})
+blog.addEventListener("click", () => {
+    display.innerHTML = `<h2 class="text-secondary">Bienvenue dans ton gestionnaire d'articles de blog</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, error!</p>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum debitis dolorum veritatis hic, amet quae totam cum molestias aliquam magni laudantium dolore. Vitae, mollitia officia.</p>
+<p>Lorem ipsum dolor sit amet.</p>`;
+})
+menus.addEventListener("click", () => {
+    display.innerHTML = `<h2 class="text-dark">Bienvenue sur l'espace pour gérer les menus de ton restaurant</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, error!</p>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum debitis dolorum veritatis hic, amet quae totam cum molestias aliquam magni laudantium dolore. Vitae, mollitia officia.</p>
+<p>Lorem ipsum dolor sit amet.</p>`;
+})
 
+
+// PAGE PAR DEFAUTL
 display.innerHTML = `<h1>Bienvenue sur l'espace Manager</h1>
     <img src="../pictures/image_task_manager.png" class="float-start me-3" alt="Image flottante à gauche">
 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit quod ratione maiores aliquid pariatur, dolorem distinctio voluptates ut tempore consequatur sequi velit ipsum aliquam eos, natus reprehenderit consequuntur similique modi.
