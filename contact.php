@@ -1,4 +1,13 @@
 <?php
+
+// CONNECTION A LA DATABASE RESTAURANT2.0
+try{
+  $bdd = new PDO('mysql:host=localhost;dbname=restaurant2.0;charset=utf8;', 'root', '');
+} catch(Exception $e){
+  die ('Erreur '.$e->getMessage());
+}
+
+
 $firstname = '';
 $lastname = '';
 $mail = '';
@@ -8,19 +17,15 @@ $motif = '';
 
 if(isset($_POST['firstname'])){
   $firstname = htmlspecialchars($_POST['firstname']);
-  echo $firstname.'<br>';
 }
 if(isset($_POST['lastname'])){
   $lastname = htmlspecialchars($_POST['lastname']);
-  echo $lastname.'<br>';
 }
 if(isset($_POST['email'])){
   $email = htmlspecialchars($_POST['email']);
-  echo $email.'<br>';
 }
 if(isset($_POST['message'])){
   $message = htmlspecialchars($_POST['message']);
-  echo $message.'<br>';
 }
 
 if (isset($_POST['motif'])) {
@@ -28,21 +33,26 @@ if (isset($_POST['motif'])) {
 
   switch ($motif) {
       case 'infos':
-          echo "Obtenir des informations";
+          // echo "Obtenir des informations";
           break;
       case 'plaintes':
-          echo "Formuler une plainte";
+          // echo "Formuler une plainte";
           break;
       case 'guestbook':
-          echo "Publier dans le livre d'or";
+          // echo "Publier dans le livre d'or";
           break;
       default:
-          echo "Choix non précisé.";
+          // echo "Choix non précisé.";
           break;
   }
 } else {
   echo "Erreur: aucune sélection faite.";
 }
+
+$requete = $bdd -> prepare('INSERT INTO messagerie (prenom,nom,email,motif,message)
+												        VALUES (?,?,?,?,?)');
+
+$requete->execute(array($firstname,$lastname,$email,$motif,$message));
 
 ?>
 
@@ -112,7 +122,6 @@ if (isset($_POST['motif'])) {
         </div>
       </div>
     </header>
-
     <div class="container-fluid bg-dark menu-defilant">
         <div class="row bg-dark">
           <p class="text-white my-3 text-center">
