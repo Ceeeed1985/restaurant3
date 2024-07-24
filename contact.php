@@ -10,7 +10,7 @@ try{
 
 $firstname = '';
 $lastname = '';
-$mail = '';
+$email = '';
 $message = '';
 $motif = '';
 
@@ -52,7 +52,7 @@ if (isset($_POST['motif'])) {
 $requete = $bdd -> prepare('INSERT INTO messagerie (prenom,nom,email,motif,message)
 												        VALUES (?,?,?,?,?)');
 
-$requete->execute(array($firstname,$lastname,$mail,$motif,$message));
+$requete->execute(array($firstname,$lastname,$email,$motif,$message));
 
 ?>
 

@@ -151,28 +151,24 @@ $requeteGuestbook = $bdd->query('SELECT *
                                         echo '
                                         <section class="container border border-1 rounded bg-warning bg-opacity-10 py-3 px-4 my-2">
                                             <section class="row">
-                                                <section class="col-md-1 text-center">
-                                                    <h4>Motif</h4>
-                                                    <p>'.$donnees['motif'].'</p>
-                                                </section>
-                                                <section class="col-md-3 text-center">
-                                                    <h4>Prénom</h4>
+                                                <section class="col-md-4">
+                                                    <h5>Prénom</h5>
                                                     <p>'.$donnees['prenom'].'</p>
                                                 </section>
-                                                <section class="col-md-3 text-center">
-                                                  <h4>Nom</h4>
+                                                <section class="col-md-4">
+                                                  <h5>Nom</h5>
                                                     <p>'.$donnees['nom'].'</p>
                                               </section>
-                                             <section class="col-md-5 text-center">
-                                                  <h4>Mail</h4>
+                                             <section class="col-md-4">
+                                                  <h5>Mail</h5>
                                                   <p>'.$donnees['email'].'</p>
                                              </section>
                                          </section>
                                          <section class="row">
-                                                <h4>Message</h4>
+                                                <h5>Message</h5>
                                                 <p>'.$donnees['message'].'</p>
                                             </section>
-                                            <button class="btn btn-success">Répondre</button>
+                                            <button class="btn btn-success">Publier</button>
                                             <button class="btn btn-danger">Effacer</button>
                                      </section>';
                                         }
