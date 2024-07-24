@@ -8,9 +8,15 @@ $bdd = new PDO('mysql:host=localhost;dbname=restaurant2.0;charset=utf8','root','
     die("Erreur : ".$e->getMessage());
 }
 
-$requete = $bdd->query('SELECT *
+$requeteMessagerie = $bdd->query('SELECT *
                             FROM messagerie
                             WHERE motif = "plaintes" OR motif = "infos"');
+
+$requeteGuestbook = $bdd->query('SELECT *
+                                    FROM messagerie
+                                    WHERE motif = "guestbook"');
+
+
 ?>
 
 
@@ -77,9 +83,73 @@ $requete = $bdd->query('SELECT *
                             <section class="tab-pane fade" id="sectionMessagerie" role="tabpanel" aria-labelledby="messagerie-tab">
                                 <h2 class="text-danger mb-5">Bienvenue sur votre gestionnaire de messages</h2>
                                 <?php
-                                while ($donnees = $requete->fetch()){
+                                while ($donnees = $requeteMessagerie->fetch()){
+                                    if($donnees['motif'] == "plaintes"){
                                         echo '
                                         <section class="container border border-1 rounded bg-danger bg-opacity-10 py-3 px-4 my-2">
+                                            <section class="row">
+                                                <section class="col-md-1 text-center">
+                                                    <h6>Motif</h6>
+                                                    <p>'.$donnees['motif'].'</p>
+                                                </section>
+                                                <section class="col-md-3 text-center">
+                                                    <h6>Prénom</h6>
+                                                    <p>'.$donnees['prenom'].'</p>
+                                                </section>
+                                                <section class="col-md-3 text-center">
+                                                  <h6>Nom</h6>
+                                                    <p>'.$donnees['nom'].'</p>
+                                              </section>
+                                             <section class="col-md-5 text-center">
+                                                  <h6>Mail</h6>
+                                                  <p>'.$donnees['email'].'</p>
+                                             </section>
+                                         </section>
+                                         <section class="row">
+                                                <h6>Message</h6>
+                                                <p>'.$donnees['message'].'</p>
+                                            </section>
+                                            <button class="btn btn-success">Répondre</button>
+                                            <button class="btn btn-danger">Effacer</button>
+                                     </section>';
+                                        } else {
+                                            echo '
+                                            <section class="container border border-1 rounded bg-primary bg-opacity-10 py-3 px-4 my-2">
+                                                <section class="row">
+                                                    <section class="col-md-1 text-center">
+                                                        <h6>Motif</h6>
+                                                        <p>'.$donnees['motif'].'</p>
+                                                    </section>
+                                                    <section class="col-md-3 text-center">
+                                                        <h6>Prénom</h6>
+                                                        <p>'.$donnees['prenom'].'</p>
+                                                    </section>
+                                                    <section class="col-md-3 text-center">
+                                                      <h6>Nom</h6>
+                                                        <p>'.$donnees['nom'].'</p>
+                                                  </section>
+                                                 <section class="col-md-5 text-center">
+                                                      <h6>Mail</h6>
+                                                      <p>'.$donnees['email'].'</p>
+                                                 </section>
+                                             </section>
+                                             <section class="row">
+                                                    <h6>Message</h6>
+                                                    <p>'.$donnees['message'].'</p>
+                                                </section>
+                                                <button class="btn btn-success">Répondre</button>
+                                                <button class="btn btn-danger">Effacer</button>
+                                         </section>';  
+                                        }
+                                    }
+                                    ?>
+                            </section>
+                            <section class="tab-pane fade" id="sectionGuestbook" role="tabpanel" aria-labelledby="guestbook-tab">
+                                <h2 class="text-warning">Bienvenue sur votre gestionnaire du livre d'or</h2>
+                                <?php
+                                while ($donnees = $requeteGuestbook->fetch()){
+                                        echo '
+                                        <section class="container border border-1 rounded bg-warning bg-opacity-10 py-3 px-4 my-2">
                                             <section class="row">
                                                 <section class="col-md-1 text-center">
                                                     <h4>Motif</h4>
@@ -107,9 +177,6 @@ $requete = $bdd->query('SELECT *
                                      </section>';
                                         }
                                     ?>
-                            </section>
-                            <section class="tab-pane fade" id="sectionGuestbook" role="tabpanel" aria-labelledby="guestbook-tab">
-                                <h2 class="text-warning">Bienvenue sur votre gestionnaire du livre d'or</h2>
                             </section>
                             <section class="tab-pane fade" id="sectionMedias" role="tabpanel" aria-labelledby="medias-tab">
                                 <h2 class="text-success">Bienvenue dans votre bibliothèque média</h2>
