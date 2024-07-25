@@ -176,6 +176,8 @@ $requeteGuestbook = $bdd->query('SELECT *
                             </section>
                             <section class="tab-pane fade" id="sectionMedias" role="tabpanel" aria-labelledby="medias-tab">
                                 <h2 class="text-success">Bienvenue dans votre bibliothèque média</h2>
+                                <p>Cliquez pour insérer</p>
+                                <button class="btn btn-primary">Uploader</button>
                             </section>
                             <section class="tab-pane fade" id="sectionCampagnes" role="tabpanel" aria-labelledby="campagnes-tab">
                                 <h2 class="text-info">Bienvenue sur votre gestionnaire de campagnes et prompotions</h2>
