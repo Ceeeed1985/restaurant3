@@ -8,13 +8,21 @@ $bdd = new PDO('mysql:host=localhost;dbname=restaurant2.0;charset=utf8','root','
     die("Erreur : ".$e->getMessage());
 }
 
-$requeteMessagerie = $bdd->query('SELECT *
-                            FROM messagerie
-                            WHERE motif = "plaintes" OR motif = "infos"');
+$motif1 = "plaintes";
+$motif2 = "infos";
+$motif3 = "guestbook";
+$statut = "online";
 
-$requeteGuestbook = $bdd->query('SELECT *
+$requeteMessagerie = $bdd->prepare('SELECT *
+                            FROM messagerie
+                            WHERE (motif = ? OR motif = ?) AND (status = ?)');
+
+$requeteMessagerie->execute(array($motif1, $motif2, $statut));
+
+$requeteGuestbook = $bdd->prepare('SELECT *
                                     FROM messagerie
-                                    WHERE motif = "guestbook"');
+                                    WHERE motif = ? AND status = ?');
+$requeteGuestbook->execute(array($motif3, $statut));
 
 
 ?>
@@ -81,7 +89,6 @@ $requeteGuestbook = $bdd->query('SELECT *
                                 <h2 class="text-primary">Bienvenue sur le dashboard</h2>
                             </section>
                             <section class="tab-pane fade" id="sectionMessagerie" role="tabpanel" aria-labelledby="messagerie-tab">
-                                <h2 class="text-danger mb-5">Bienvenue sur votre gestionnaire de messages</h2>
                                 <?php
                                 while ($donnees = $requeteMessagerie->fetch()){
                                     if($donnees['motif'] == "plaintes"){
@@ -194,7 +201,6 @@ $requeteGuestbook = $bdd->query('SELECT *
             </section>
         </section>
     </section>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

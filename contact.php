@@ -13,6 +13,7 @@ $lastname = '';
 $email = '';
 $message = '';
 $motif = '';
+$status = 'online';
 
 
 if(isset($_POST['firstname'])){
@@ -29,30 +30,13 @@ if(isset($_POST['message'])){
 }
 
 if (isset($_POST['motif'])) {
-  $motif = htmlspecialchars($_POST['motif']);
+  $motif = htmlspecialchars($_POST['motif']);}
 
-  switch ($motif) {
-      case 'infos':
-          // echo "Obtenir des informations";
-          break;
-      case 'plaintes':
-          // echo "Formuler une plainte";
-          break;
-      case 'guestbook':
-          // echo "Publier dans le livre d'or";
-          break;
-      default:
-          // echo "Choix non précisé.";
-          break;
-  }
-} else {
-  echo "Erreur: aucune sélection faite.";
-}
 
-$requete = $bdd -> prepare('INSERT INTO messagerie (prenom,nom,email,motif,message)
-												        VALUES (?,?,?,?,?)');
+$requete = $bdd -> prepare('INSERT INTO messagerie (prenom,nom,email,motif,message,status)
+												        VALUES (?,?,?,?,?,?)');
 
-$requete->execute(array($firstname,$lastname,$email,$motif,$message));
+$requete->execute(array($firstname,$lastname,$email,$motif,$message,$status));
 
 ?>
 
