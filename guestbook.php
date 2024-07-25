@@ -50,16 +50,16 @@ $requeteGuestbook->execute(array($motif3, $statut));
                 <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav">
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning" href="index.html">Accueil</a>
+                      <a class="nav-link text-warning" href="index.php">Accueil</a>
                     </li>
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning" href="menu.html">Notre carte</a>
+                      <a class="nav-link text-warning" href="menu.php">Notre carte</a>
                     </li>
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning" href="pictures.html">Album</a>
+                      <a class="nav-link text-warning" href="pictures.php">Album</a>
                     </li>
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning" href="restaurant.html">A propos</a>
+                      <a class="nav-link text-warning" href="restaurant.php">A propos</a>
                     </li>
                     <li class="nav-item px-3">
                       <a class="nav-link text-warning" href="guestbook.php">Livre d'or</a>
