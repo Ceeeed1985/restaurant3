@@ -31,22 +31,22 @@ $requeteGuestbook->execute(array($motif3, $statut));
 
 // GENERER MA GALERIE D'IMAGES
 
-if (isset($_FILES['image']) && $_FILES['image']['error'] == 0){
+if (isset($_POST['upload_image']) && isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
     $error = 1;
 
-    if($_FILES['image']['size'] <= 3000000){
+    if ($_FILES['image']['size'] <= 3000000) {
         $informationsImage = pathinfo($_FILES['image']['name']);
         $extensionImage = $informationsImage['extension'];
         $extensionsArray = array('jpeg', 'jpg', 'gif', 'png');
-        
-        if(in_array($extensionImage, $extensionsArray)){
-            $nomImage = 'uploads/'.time().rand().rand().'.'.$extensionImage;
+
+        if (in_array($extensionImage, $extensionsArray)) {
+            $nomImage = 'uploads/' . time() . rand() . rand() . '.' . $extensionImage;
             move_uploaded_file($_FILES['image']['tmp_name'], $nomImage);
-            $adressImage = 'http://localhost/restaurant2.0/'.$nomImage;
+            $adressImage = 'http://localhost/restaurant2.0/' . $nomImage;
             $error = 0;
 
             $requeteGalerie = $bdd->prepare('INSERT INTO images (nom_image, extension_image, adress_image)
-                                    VALUES (?,?,?)');
+                                    VALUES (?, ?, ?)');
             $requeteGalerie->execute(array($nomImage, $extensionImage, $adressImage));
         }
     }
@@ -81,28 +81,28 @@ $requeteGalerieAffichage = $bdd->query('SELECT * FROM images');
                     <section class="tab d-flex justify-content-around" role="tablist">
                         <ul class="nav nav-tabs d-flex flex-column col-md-3">
                             <li class="nav-item mx-1">
-                                <a class="btn btn-dark btn-lg border-2 m-2 w-100 active" role="tab" id="monTaskManager-tab" data-bs-toggle="tab" href="#sectionMonTaskManager" aria-controls="monTaskManager" aria-selected="true">Task Manager</a>
+                                <a class="btn btn-dark btn-lg border-2 m-1 w-100 active" role="tab" id="monTaskManager-tab" data-bs-toggle="tab" href="#sectionMonTaskManager" aria-controls="monTaskManager" aria-selected="true">Task Manager</a>
                             </li>
                             <li class="nav-item mx-1">
-                                <a class="btn btn-primary btn-lg border-2 m-2 w-100" role="tab" id="dashboard-tab" data-bs-toggle="tab" href="#sectionDashboard" aria-controls="dashboard" aria-selected="false">Dashboard</a>
+                                <a class="btn btn-primary btn-lg border-2 m-1 w-100" role="tab" id="dashboard-tab" data-bs-toggle="tab" href="#sectionDashboard" aria-controls="dashboard" aria-selected="false">Dashboard</a>
                             </li>
                             <li class="nav-item mx-1">
-                                <a class="btn btn-danger btn-lg border-2 m-2 w-100" role="tab" id="messagerie-tab" data-bs-toggle="tab" href="#sectionMessagerie" aria-controls="messagerie" aria-selected="false">Messagerie</a>
+                                <a class="btn btn-danger btn-lg border-2 m-1 w-100" role="tab" id="messagerie-tab" data-bs-toggle="tab" href="#sectionMessagerie" aria-controls="messagerie" aria-selected="false">Messagerie</a>
                             </li>
                             <li class="nav-item mx-1">
-                                <a class="btn btn-warning btn-lg border-2 m-2 w-100" role="tab" id="guestbook-tab" data-bs-toggle="tab" href="#sectionGuestbook" aria-controls="guestbook" aria-selected="false">Livre d'or</a>
+                                <a class="btn btn-warning btn-lg border-2 m-1 w-100" role="tab" id="guestbook-tab" data-bs-toggle="tab" href="#sectionGuestbook" aria-controls="guestbook" aria-selected="false">Livre d'or</a>
                             </li>
                             <li class="nav-item mx-1">
-                                <a class="btn btn-success btn-lg border-2 m-2 w-100" role="tab" id="medias-tab" data-bs-toggle="tab" href="#sectionMedias" aria-controls="medias" aria-selected="false">Médias</a>
+                                <a class="btn btn-success btn-lg border-2 m-1 w-100" role="tab" id="medias-tab" data-bs-toggle="tab" href="#sectionMedias" aria-controls="medias" aria-selected="false">Médias</a>
                             </li>
                             <li class="nav-item mx-1">
-                                <a class="btn btn-info btn-lg border-2 m-2 w-100" role="tab" id="campagnes-tab" data-bs-toggle="tab" href="#sectionCampagnes" aria-controls="campagnes" aria-selected="false">Campagnes</a>
+                                <a class="btn btn-info btn-lg border-2 m-1 w-100" role="tab" id="campagnes-tab" data-bs-toggle="tab" href="#sectionCampagnes" aria-controls="campagnes" aria-selected="false">Campagnes</a>
                             </li>
                             <li class="nav-item mx-1">
-                                <a class="btn btn-secondary btn-lg border-2 m-2 w-100" role="tab" id="blog-tab" data-bs-toggle="tab" href="#sectionBlog" aria-controls="blog" aria-selected="false">Blog</a>
+                                <a class="btn btn-secondary btn-lg border-2 m-1 w-100" role="tab" id="blog-tab" data-bs-toggle="tab" href="#sectionBlog" aria-controls="blog" aria-selected="false">Blog</a>
                             </li>
                             <li class="nav-item mx-1">
-                                <a class="btn btn-outline-secondary btn-lg border-2 m-2 w-100" role="tab" id="menus-tab" data-bs-toggle="tab" href="#sectionMenus" aria-controls="menus" aria-selected="false">Menus</a>
+                                <a class="btn btn-outline-secondary btn-lg border-2 m-1 w-100" role="tab" id="menus-tab" data-bs-toggle="tab" href="#sectionMenus" aria-controls="menus" aria-selected="false">Menus</a>
                             </li>
                         </ul>
                         <section class="tab-content col-md-8">
@@ -215,22 +215,26 @@ $requeteGalerieAffichage = $bdd->query('SELECT * FROM images');
                                     <form action="manager.php" method="post" enctype="multipart/form-data">
                                         <p class="d-flex justify-content-between align-items-center">
                                             <input type="file" name="image" required>
-                                            <button class="btn btn-primary">Uploader</button>
+                                            <button class="btn btn-primary" name="upload_image">Uploader</button>
                                         </p>
                                     </form>    
                                 </section>
                                 <section class="container border border-1 rounded bg-light mt-3 pt-3 px-3 d-flex flex-wrap">
+                                   
                                     <?php
-                                    while( $donneesImage = $requeteGalerieAffichage->fetch()){
-                                        echo '
-                                                <section class="col-md-4 mb-3 p-2">
-                                                    <section class="card">
-                                                        <img src="' . $donneesImage['adress_image'] . '" class="card-img-top w-100" alt="' . $donneesImage['nom_image'] . '">
-                                                        <section class="card-body">
-                                                            <h5 class="card-title">' . $donneesImage['nom_image'] . '</h5>
-                                                        </section>
+                                        while ($donneesImage = $requeteGalerieAffichage->fetch()) {
+                                            echo '
+                                            <section class="col-md-4 mb-3 p-2">
+                                                <section class="card">
+                                                    <div class="image-container">
+                                                        <img src="' . $donneesImage['adress_image'] . '" class="card-img-top" alt="' . $donneesImage['nom_image'] . '">
+                                                    </div>
+                                                    <section class="card-body">
+                                                        <button class="btn btn-success">Publier</button>
+                                                        <button class="btn btn-danger">Effacer</button>
                                                     </section>
-                                                </section>';
+                                                </section>
+                                            </section>';
                                         }
                                         ?>
 
