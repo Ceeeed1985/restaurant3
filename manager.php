@@ -12,6 +12,10 @@ $motif1 = "plaintes";
 $motif2 = "infos";
 $motif3 = "guestbook";
 $statut = "online";
+$nomImage = '';
+$extensionImage = '';
+$adressImage = '';
+
 
 $requeteMessagerie = $bdd->prepare('SELECT *
                             FROM messagerie
@@ -24,6 +28,31 @@ $requeteGuestbook = $bdd->prepare('SELECT *
                                     WHERE motif = ? AND status = ?');
 $requeteGuestbook->execute(array($motif3, $statut));
 
+
+// GENERER MA GALERIE D'IMAGES
+
+if (isset($_FILES['image']) && $_FILES['image']['error'] == 0){
+    $error = 1;
+
+    if($_FILES['image']['size'] <= 3000000){
+        $informationsImage = pathinfo($_FILES['image']['name']);
+        $extensionImage = $informationsImage['extension'];
+        $extensionsArray = array('jpeg', 'jpg', 'gif', 'png');
+        
+        if(in_array($extensionImage, $extensionsArray)){
+            $nomImage = 'uploads/'.time().rand().rand().'.'.$extensionImage;
+            move_uploaded_file($_FILES['image']['tmp_name'], $nomImage);
+            $adressImage = 'http://localhost/restaurant2.0/'.$nomImage;
+            $error = 0;
+
+            $requeteGalerie = $bdd->prepare('INSERT INTO images (nom_image, extension_image, adress_image)
+                                    VALUES (?,?,?)');
+            $requeteGalerie->execute(array($nomImage, $extensionImage, $adressImage));
+        }
+    }
+}
+
+$requeteGalerieAffichage = $bdd->query('SELECT * FROM images');
 
 ?>
 
@@ -182,9 +211,30 @@ $requeteGuestbook->execute(array($motif3, $statut));
                                     ?>
                             </section>
                             <section class="tab-pane fade" id="sectionMedias" role="tabpanel" aria-labelledby="medias-tab">
-                                <h2 class="text-success">Bienvenue dans votre bibliothèque média</h2>
-                                <p>Cliquez pour insérer</p>
-                                <button class="btn btn-primary">Uploader</button>
+                                <section class="container border border-1 rounded bg-light pt-3 px-3">
+                                    <form action="manager.php" method="post" enctype="multipart/form-data">
+                                        <p class="d-flex justify-content-between align-items-center">
+                                            <input type="file" name="image" required>
+                                            <button class="btn btn-primary">Uploader</button>
+                                        </p>
+                                    </form>    
+                                </section>
+                                <section class="container border border-1 rounded bg-light mt-3 pt-3 px-3 d-flex flex-wrap">
+                                    <?php
+                                    while( $donneesImage = $requeteGalerieAffichage->fetch()){
+                                        echo '
+                                                <section class="col-md-4 mb-3 p-2">
+                                                    <section class="card">
+                                                        <img src="' . $donneesImage['adress_image'] . '" class="card-img-top w-100" alt="' . $donneesImage['nom_image'] . '">
+                                                        <section class="card-body">
+                                                            <h5 class="card-title">' . $donneesImage['nom_image'] . '</h5>
+                                                        </section>
+                                                    </section>
+                                                </section>';
+                                        }
+                                        ?>
+
+                                </section>
                             </section>
                             <section class="tab-pane fade" id="sectionCampagnes" role="tabpanel" aria-labelledby="campagnes-tab">
                                 <h2 class="text-info">Bienvenue sur votre gestionnaire de campagnes et prompotions</h2>
