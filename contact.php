@@ -10,7 +10,7 @@ try{
 
 $firstname = '';
 $lastname = '';
-$mail = '';
+$email = '';
 $message = '';
 $motif = '';
 
