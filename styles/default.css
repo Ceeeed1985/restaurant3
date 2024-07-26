@@ -119,8 +119,8 @@ body {
 }
 
 .background-guestbook {
-  background: url("/pictures/guestbook.png");
-  /* background-repeat: no-repeat; */
+  background: url('https://raw.githubusercontent.com/Ceeeed1985/restaurant2.0/main/pictures/guestbook.png');
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
 }

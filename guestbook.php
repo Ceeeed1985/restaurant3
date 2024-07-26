@@ -1,5 +1,21 @@
+<?php
+
+try{
+$bdd = new PDO('mysql:host=localhost;dbname=restaurant2.0;charset=utf8','root','');
+} catch(Exception $e){
+    die("Erreur : ".$e->getMessage());
+}
+
+$motif3 = "guestbook";
+$statut = "online";
+
+$requeteGuestbook = $bdd->prepare('SELECT *
+                                    FROM messagerie
+                                    WHERE motif = ? AND status = ?');
+$requeteGuestbook->execute(array($motif3, $statut));
 
 
+?>
 
 
 <!DOCTYPE html>
@@ -32,36 +48,24 @@
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="menu">
-                  <ul class="navbar-nav">
+                <ul class="navbar-nav">
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning active" href="index.html"
-                        >Accueil</a
-                      >
+                      <a class="nav-link text-warning" href="index.php">Accueil</a>
                     </li>
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning" href="menu.html"
-                        >Notre carte</a
-                      >
+                      <a class="nav-link text-warning" href="menu.php">Notre carte</a>
                     </li>
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning" href="pictures.html"
-                        >Album</a
-                      >
+                      <a class="nav-link text-warning" href="pictures.php">Album</a>
                     </li>
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning" href="restaurant.html"
-                        >A propos</a
-                      >
+                      <a class="nav-link text-warning" href="restaurant.php">A propos</a>
                     </li>
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning" href="guestbook.php"
-                        >Livre d'or</a
-                      >
+                      <a class="nav-link text-warning" href="guestbook.php">Livre d'or</a>
                     </li>
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning" href="contact.html"
-                        >Contact</a
-                      >
+                      <a class="nav-link text-warning active" href="contact.php">Contact</a>
                     </li>
                   </ul>
                 </div>
@@ -89,28 +93,25 @@
         </div>
     </div>
 
-
-    <div class="container-fluid py-4 background-guestbook">
-      <div class="container">
-        <div class="row d-flex">
-          <div class="col-md-12 pb-4 text-center">
-            <h2 class="display-4">Livre <span class="text-warning">d'or</span></h2>
-          </div>
-          <div class="col-md-12 pb-4 text-center">
-            <h2 class="display-4">Livre <span class="text-warning">d'or</span></h2>
-          </div>
-          <div class="col-md-12 pb-4 text-center">
-            <h2 class="display-4">Livre <span class="text-warning">d'or</span></h2>
-          </div>
-          <div class="col-md-12 pb-4 text-center">
-            <h2 class="display-4">Livre <span class="text-warning">d'or</span></h2>
-          </div>
-          <div class="col-md-12 pb-4 text-center">
-            <h2 class="display-4">Livre <span class="text-warning">d'or</span></h2>
-          </div>
-          <section class="col-md-6">
-                
-          </section>
+    <section class="container d-flex justify-content-center flex-wrap">
+        <?php
+            while ($donnees = $requeteGuestbook->fetch()){
+                echo '
+                    <section class="col-md-5 mx-2 border border-1 rounded bg-warning bg-opacity-10 py-3 px-4 my-2 d-flex">
+                        <section class="col-md-2 d-flex justify-content-start align-items-center">
+                            <p style="font-size: 5em;" class="text-warning">&laquo;</p>
+                        </section>
+                        <section class="col-md-8 d-flex justify-content-center align-items-center flex-column">
+                            <h6>De '.$donnees['prenom'].' '.$donnees['nom'].'</h6>
+                            <p><em>'.$donnees['message'].'</em></p>
+                        </section>
+                        <section class="col-md-2 d-flex justify-content-end align-items-center">
+                            <p style="font-size: 5em;" class="text-warning">&raquo;</p>
+                        </section>
+                    </section>';
+                    }
+            ?>
+    </section>
 
 
 
