@@ -22,20 +22,23 @@ L'objectif principal est de créer un espace Back Office, afin de faciliter la g
 ### Les étapes
  - Création des éléments sur papier - DONE
  - Création de l'espace "Manager" avec les différents onglets (chargement via javascript) - DONE
- - Création de la base de donnée avec phpmyadmin
+ - Création de la base de donnée avec phpmyadmin - DONE
  - Livre d'or
-    - Création de "livre d'or" dans l'espace "Manager"
-    - Création d'une page "livre d'or" sur le site web
-    - Formulaire à mettre en lien avec la table "livre d'or"
+    - Création de "livre d'or" dans l'espace "Manager" - DONE
+    - Création d'une page "livre d'or" sur le site web - DONE
+    - Formulaire à mettre en lien avec la table "livre d'or" - DONE
+    - Faire fonctionner les boutons de publications et delete - En cours
  - Messagerie
-    - Modification du formulaire de la page contact du site web
-    - Création de "messagerie" dans l'espace "Manager"
-    - Formulaire à mettre en lien avec la table "messagerie"
+    - Modification du formulaire de la page contact du site web - DONE
+    - Création de "messagerie" dans l'espace "Manager" - DONE
+    - Formulaire à mettre en lien avec la table "messagerie" - DONE
+    - Appeler l'ouverture d'un compte de messagerie
  - Media
-    - Modification de la page "Album" du site web
-    - Création de "média" dans l'espace "Manager"
-    - Création d'un dossier "upload" à la racine du site
-    - Formulaire à mettre en lien avec la table "medias"
+    - Modification de la page "Album" du site web - DONE
+    - Création de "média" dans l'espace "Manager" - DONE
+    - Création d'un dossier "upload" à la racine du site - DONE
+    - Formulaire à mettre en lien avec la table "medias" - DONE
+    - Ajouter un bouton "publier"
 
 
 
