@@ -15,7 +15,10 @@ L'objectif principal est de créer un espace Back Office, afin de faciliter la g
  - Une page pour ajouter des photos, et les insérer dans la galerie
 
 ## Statut du projet
- - 23/07/2024 : création de la database via phpmyadmin - In Progress
+ - 26/07/2024 : bouton "publier", "delete" et "répondre" - In progress
+ - 25/07/2024 : lien entre la database et les pages du site - DONE
+ - 24/07/2024 et 25/07/2024 : Liens entre la database en la page manager.php - DONE
+ - 23/07/2024 : création de la database via phpmyadmin - DONE
  - 23/07/2024 : page "manager task" avec appel via javascript - DONE
  - 23/07/2024 : création du projet (draft) - DONE
 
