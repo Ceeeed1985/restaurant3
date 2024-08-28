@@ -8,3 +8,9 @@ Projet BeCode - Nouvelle réutilisation du projet restaurant, afin de faire le t
  - Création des dossiers Model, View et Controller
  - Séparer le code
  - Vérifier que l'ensemble fonctionne bien
+
+### Etapes :
+ 1. Création des dossiers public, model, view et controller
+ 2. Renommer les fichiers avec View (homeView)
+ 3. Déplacer les fichiers View dans le dossier view
+ 4. **En cours** : création des fichiers model
