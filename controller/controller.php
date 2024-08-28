@@ -1,15 +1,17 @@
 <?php
 
-    require('model/contactModel.php');
-    require('model/guestbookModel.php');
+    require_once('model/MessagesManager.php');
+    require_once('model/TestimonialsManager.php');
 
     function getContactView() {
-        $requete = postMessage();
+        $messageManager = new MessagesManager();
+        $requete = $messageManager->postMessage();
         require('view/contactView.php');
     }
 
     function getGuestbookView() {
-        $requeteGuestbook = getGuestMessages();
+        $testimonialManager = new TestimonialsManager();
+        $requeteGuestbook = $testimonialManager->getGuestMessages();
         require('view/guestbookView.php');
     }
 

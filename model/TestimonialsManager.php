@@ -1,12 +1,13 @@
 <?php
 
-    function getGuestMessages(){
-        try{
-            $bdd = new PDO('mysql:host=localhost;dbname=restaurant2.0;charset=utf8','root','');
-        }
-        catch(Exception $e){
-            die("Erreur : ".$e->getMessage());
-        }
+require_once('Manager.php');
+
+class TestimonialsManager extends Manager{
+    
+    public function getGuestMessages(){
+
+        $bdd = $this->connection();
+        
 
         $motif3 = "guestbook";
         $statut = "online";
@@ -19,3 +20,5 @@
         return $requeteGuestbook;
 
     }
+
+}

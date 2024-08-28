@@ -1,12 +1,14 @@
 <?php
 
-function postMessage() {
-    try{
-        $bdd = new PDO('mysql:host=localhost;dbname=restaurant2.0;charset=utf8;', 'root', '');
-    }
-    catch(Exception $e) {
-        die ('Erreur '.$e->getMessage());
-    }
+require_once('Manager.php');
+
+
+class MessagesManager extends Manager{
+    
+
+    public function postMessage() {
+    
+        $bdd = $this->connection();
 
     // mes variables
     $firstname = '';
@@ -40,6 +42,8 @@ function postMessage() {
     $requete->execute(array($firstname,$lastname,$email,$motif,$message,$status));
 
 return $requete;
+
+}
 
 }
 ?>

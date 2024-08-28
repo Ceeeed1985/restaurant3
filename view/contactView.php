@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-8">
-                    <form class="row px-5" method='post' action="contact.php" >
+                    <form class="row px-5" method='post' action="index.php?page=contact" >
                         <div class="col-md-6 col-sm-12 animate__animated animate__slideInLeft">
                             <label class="form-label" for="firstname">Votre prénom</label>
                             <input class="form-control" type="text" name="firstname" id="firstname">
