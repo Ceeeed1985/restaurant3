@@ -15,4 +15,9 @@ Projet BeCode - Nouvelle réutilisation du projet restaurant, afin de faire le t
  3. Déplacer les fichiers View dans le dossier view
  4. création des fichiers model
  5. Création d'un template base.php dans model, afin de ne pas répéter le menu, le logo, la banderole et le footer
- 6. **En cours** : modification des liens pour la navbar
+ 6. Modification des liens pour la navbar et des liens des images
+ 7. **En cours** : On passe à la programmation orientée objet
+
+
+### Problèmes rencontrés :
+ - A l'étape 6 : je ne sais pas comment régler le problème des liens dans la navbar !
