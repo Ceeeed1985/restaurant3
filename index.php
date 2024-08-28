@@ -7,7 +7,19 @@
       if(isset($_GET['page'])){
         
         if($_GET['page'] == 'contact'){
-          getContactView();
+
+            
+            $status = 'online';
+
+            if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['message']) && isset($_POST['motif'])) {
+            addTestimonial(htmlspecialchars($_POST['firstname']), htmlspecialchars($_POST['lastname']), htmlspecialchars($_POST['email']), htmlspecialchars($_POST['message']), htmlspecialchars($_POST['motif']));
+            }
+            else {
+              getContactView();
+            }
+           
+            
+
         } else if($_GET['page'] == 'guestbook'){
           getGuestbookView();
         } else if($_GET['page'] == 'home'){

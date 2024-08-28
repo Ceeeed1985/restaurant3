@@ -15,6 +15,19 @@
         require('view/guestbookView.php');
     }
 
+    function addTestimonial() {
+        $testimonialManager = new TestimonialsManager();
+        $result = $testimonialManager->postTestimonial($prenom, $nom, $email, $message, $motif);
+
+        if($result === false){
+            throw new Exception ("impossible d'ajouter votre avis pour le moment");
+        } else {
+            header('location: index.php?page=guestbook');
+            exit();
+        }
+    }
+
+
     function getHomeView() {
         require('view/homeView.php');
     }

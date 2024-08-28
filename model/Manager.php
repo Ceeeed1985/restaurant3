@@ -7,7 +7,7 @@ protected function connection(){
         $bdd = new PDO('mysql:host=localhost;dbname=restaurant2.0;charset=utf8;', 'root', '');
     }
     catch(Exception $e) {
-        die ('Erreur '.$e->getMessage());
+        throw new Exception('Erreur '.$e->getMessage());
     }
 
     return $bdd;
