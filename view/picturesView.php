@@ -42,7 +42,7 @@
                     <div class="row d-flex justify-content-around">
                       <div class="col-md-4">
                         <img
-                          src="pictures/pictures_carbonnades.png"
+                          src="public/pictures/pictures_carbonnades.png"
                           alt="carbonnades"
                           title="Photo de carbonnades avec des frites"
                           class="w-100"
@@ -50,7 +50,7 @@
                       </div>
                       <div class="col-md-4">
                         <img
-                          src="pictures/pictures_burger.jpg"
+                          src="public/pictures/pictures_burger.jpg"
                           alt="image_burger"
                           title="Photo d'un hamburger avec des frites"
                           class="w-100"
@@ -58,7 +58,7 @@
                       </div>
                       <div class="col-md-4">
                         <img
-                          src="pictures/pictures_americain.jpg"
+                          src="public/pictures/pictures_americain.jpg"
                           alt="image_americain"
                           title="Photo d'un américain avec des frites"
                           class="w-100"
@@ -72,7 +72,7 @@
                     <div class="row d-flex justify-content-around">
                       <div class="col-md-4">
                         <img
-                          src="pictures/pictures_moules.jpg"
+                          src="public/pictures/pictures_moules.jpg"
                           alt="image_moules"
                           title="Photo d'une cassolette de moules avec des frites"
                           class="w-100"
@@ -80,7 +80,7 @@
                       </div>
                       <div class="col-md-4">
                         <img
-                          src="pictures/pictures_poulet.jpeg"
+                          src="public/pictures/pictures_poulet.jpeg"
                           alt="image_poulet"
                           title="Photo d'un poulet avec des frites"
                           class="w-100"
@@ -88,7 +88,7 @@
                       </div>
                       <div class="col-md-4">
                         <img
-                          src="pictures/pictures_steak.jpg"
+                          src="public/pictures/pictures_steak.jpg"
                           alt="image_steak"
                           title="Photo d'un steak avec des frites"
                           class="w-100"
@@ -102,7 +102,7 @@
                     <div class="row d-flex justify-content-around">
                       <div class="col-md-4">
                         <img
-                          src="pictures/pictures_carbonnades.png"
+                          src="public/pictures/pictures_carbonnades.png"
                           alt="image_carbonnades"
                           title="Photos de carbonnades avec des frites"
                           class="w-100"
@@ -110,7 +110,7 @@
                       </div>
                       <div class="col-md-4">
                         <img
-                          src="pictures/pictures_burger.jpg"
+                          src="public/pictures/pictures_burger.jpg"
                           alt="image_burger"
                           title="Photo d'un hamburger avec des frites"
                           class="w-100"
@@ -118,7 +118,7 @@
                       </div>
                       <div class="col-md-4">
                         <img
-                          src="pictures/pictures_americain.jpg"
+                          src="public/pictures/pictures_americain.jpg"
                           alt="image_americain"
                           title="Photo d'un américain avec des frites"
                           class="w-100"
@@ -132,7 +132,7 @@
                     <div class="row d-flex justify-content-around">
                       <div class="col-md-4">
                         <img
-                          src="pictures/pictures_moules.jpg"
+                          src="public/pictures/pictures_moules.jpg"
                           alt="image_moules"
                           title="Photo d'un cassolette de moules avec des frites"
                           class="w-100"
@@ -140,7 +140,7 @@
                       </div>
                       <div class="col-md-4">
                         <img
-                          src="pictures/pictures_poulet.jpeg"
+                          src="public/pictures/pictures_poulet.jpeg"
                           alt="image_poulet"
                           title="Photo d'un poulet avec des frites"
                           class="w-100"
@@ -148,7 +148,7 @@
                       </div>
                       <div class="col-md-4">
                         <img
-                          src="pictures/pictures_steak.jpg"
+                          src="public/pictures/pictures_steak.jpg"
                           alt="image_steak"
                           title="Photo d'un steak avec des frites"
                           class="w-100"

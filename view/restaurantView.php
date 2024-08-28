@@ -65,7 +65,7 @@
             <div class="container text-start">
               <div class="row align-items-start">
                 <div class="col-md-3 text-center">
-                  <img src="pictures/icone_location.png" alt="icone_location" title="Icone location / lieux" />
+                  <img src="public/pictures/icone_location.png" alt="icone_location" title="Icone location / lieux" />
                 </div>
                 <div class="col-md-9">
                   <p class="m-0">Pass'moi une frite SARL</p>
@@ -74,7 +74,7 @@
               </div>
               <div class="row">
                 <div class="col-md-3 text-center">
-                  <img src="pictures/icone_android.png" alt="icone_android" title="Icone d'un téléphone portable" />
+                  <img src="public/pictures/icone_android.png" alt="icone_android" title="Icone d'un téléphone portable" />
                 </div>
                 <div class="col-md-9">
                   <p>+32 478 46 53 73</p>
@@ -82,7 +82,7 @@
               </div>
               <div class="row">
                 <div class="col-md-3 text-center">
-                  <img src="pictures/icone_phone.png" alt="icone_phone" title="Icone d'un téléphone fixe" />
+                  <img src="public/pictures/icone_phone.png" alt="icone_phone" title="Icone d'un téléphone fixe" />
                 </div>
                 <div class="col-md-9">
                   <p>+32 68 33 30 01</p>
@@ -90,7 +90,7 @@
               </div>
               <div class="row pb-4">
                 <div class="col-md-3 text-center">
-                  <img src="pictures/icone_mail.png" alt="icone_mail" title="Icone d'un email / enveloppe" />
+                  <img src="public/pictures/icone_mail.png" alt="icone_mail" title="Icone d'un email / enveloppe" />
                 </div>
                 <div class="col-md-9">
                   <p>passmoiunefrite@patate.com</p>
@@ -99,7 +99,7 @@
               <hr />
               <div class="row pt-4">
                 <div class="col-md-3 text-center">
-                  <img src="pictures/icone_horaire.png" alt="icone_horaire" title="Icone d'un calendrier"/>
+                  <img src="public/pictures/icone_horaire.png" alt="icone_horaire" title="Icone d'un calendrier"/>
                 </div>
                 <div class="col-md-9">
                   <h5 class="pb-2">Horaires d'ouvertures</h5>
@@ -182,7 +182,7 @@
         <a href="https://www.facebook.com/" class="col-md-2">
           <img
             class="w-100 py-3 logo_anime_facebook"
-            src="pictures/logo_facebook.png"
+            src="public/pictures/logo_facebook.png"
             alt="logo_facebook"
             title="Logo Facebook"
           />
@@ -190,7 +190,7 @@
         <a href="https://www.instagram.com/" class="col-md-2">
           <img
             class="w-100 py-3 logo_anime_instagram"
-            src="pictures/logo_instagram.png"
+            src="public/pictures/logo_instagram.png"
             alt="logo_instagram"
             title="Logo Instagram"
           />
@@ -198,7 +198,7 @@
         <a href="https://www.thefork.be/" class="col-md-2">
           <img
             class="w-100 py-3 logo_anime_fork"
-            src="pictures/logo_fork.png"
+            src="public/pictures/logo_fork.png"
             alt="logo_fork"
             title="Logo de The Fork"
           />
@@ -206,7 +206,7 @@
         <a href="https://www.linkedin.com/" class="col-md-2">
           <img
             class="w-100 py-3 logo_anime_linkedin"
-            src="pictures/logo_linkedin.png"
+            src="public/pictures/logo_linkedin.png"
             alt="logo_linkedin"
             title="Logo de Linkedin"
           />

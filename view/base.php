@@ -31,22 +31,22 @@
                 <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav">
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning" href="./homeView.php">Accueil</a>
+                      <a class="nav-link text-warning" href="./view/homeView.php">Accueil</a>
                     </li>
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning" href="./view/menuView.php">Notre carte</a>
+                      <a class="nav-link text-warning" href="menuView.php">Notre carte</a>
                     </li>
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning" href="./view/picturesView.php">Album</a>
+                      <a class="nav-link text-warning" href="picturesView.php">Album</a>
                     </li>
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning" href="./view/restaurantView.php">A propos</a>
+                      <a class="nav-link text-warning" href="restaurantView.php">A propos</a>
                     </li>
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning" href=".view/guestbookView.php">Livre d'or</a>
+                      <a class="nav-link text-warning" href="guestbookView.php">Livre d'or</a>
                     </li>
                     <li class="nav-item px-3">
-                      <a class="nav-link text-warning active" href=".view/contactView.php">Contact</a>
+                      <a class="nav-link text-warning active" href="contactView.php">Contact</a>
                     </li>
                   </ul>
                 </div>
