@@ -12,3 +12,7 @@
         $requeteGuestbook = getGuestMessages();
         require('view/guestbookView.php');
     }
+
+    function getHomeView() {
+        require('view/homeView.php');
+    }

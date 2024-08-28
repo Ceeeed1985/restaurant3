@@ -10,11 +10,13 @@
           getContactView();
         } else if($_GET['page'] == 'guestbook'){
           getGuestbookView();
+        } else if($_GET['page'] == 'home'){
+          getHomeView();
         } else {
           throw new Exception ("Cette page n'existe pas ou a été supprimée");
         }
       } else {
-        getContactView();
+        getHomeView();
       }
     } catch (Exception $e) {
         $error = $e->getmessage();
