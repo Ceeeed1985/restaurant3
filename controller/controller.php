@@ -16,3 +16,19 @@
     function getHomeView() {
         require('view/homeView.php');
     }
+
+    function getManagerView() {
+        require('view/managerView.php');
+    }
+
+    function getMenuView() {
+        require('view/menuView.php');
+    }
+
+    function getPicturesView() {
+        require('view/picturesView.php');
+    }
+
+    function getRestaurantView() {
+        require('view/restaurantView.php');
+    }
