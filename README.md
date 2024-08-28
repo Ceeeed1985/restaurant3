@@ -13,4 +13,5 @@ Projet BeCode - Nouvelle réutilisation du projet restaurant, afin de faire le t
  1. Création des dossiers public, model, view et controller
  2. Renommer les fichiers avec View (homeView)
  3. Déplacer les fichiers View dans le dossier view
- 4. **En cours** : création des fichiers model
+ 4. création des fichiers model
+ 5. **En cours** : création d'un fichier base.php dans model, afin de ne pas répéter le menu, le logo, la banderole et le footer
